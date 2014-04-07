@@ -5,8 +5,11 @@ $DOC.parseContent(function(){/*
 
 <!--fixed-top-bar
 [navbar]
-[Home]({{=$DOC.root}}index.html)
+[QVOD Lab]({{=$DOC.root}}index.html)
 ***
+* [研究领域]({{=$DOC.root}}index.html)
+* [项目]({{=$DOC.root}}index.html)
+* [团队]({{=$DOC.root}}index.html)
 * [帮助]({{=$DOC.root}}index.html)
  * [Documents]({{=$DOC.root}}index.html)
   * [CML (Component Markdown Language)]({{=$DOC.root}}docs/CML.html)
