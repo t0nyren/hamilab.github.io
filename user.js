@@ -10,8 +10,8 @@ $DOC.parseContent(function(){/*
 * [研究领域]({{=$DOC.root}}index.html)
 * [项目]({{=$DOC.root}}index.html)
 * [团队](info/team.html)
-* [帮助]({{=$DOC.root}}index.html)
- * [Documents]({{=$DOC.root}}index.html)
+* [帮助]
+ * [Documents](
   * [CML (Component Markdown Language)]({{=$DOC.root}}docs/CML.html)
   * [CSS]({{=$DOC.root}}components/controls.css.html)
   * [Layout]({{=$DOC.root}}docs/layout.html)
@@ -19,7 +19,7 @@ $DOC.parseContent(function(){/*
   * [API]({{=$DOC.root}}docs/api.html)
   * [Editor]({{=$DOC.root}}docs/editor.html?edit)
   * [Blog]({{=$DOC.root}}blog.html)
- * [Components]({{=$DOC.root}}index.html)
+ * [Components]
   * [Overview]({{=$DOC.root}}docs/components.html)
   * [Navigation bar]({{=$DOC.root}}components/controls.navbar.html)
   * [Footer layout]({{=$DOC.root}}components/controls.footer-layout.html)
