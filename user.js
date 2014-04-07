@@ -9,7 +9,7 @@ $DOC.parseContent(function(){/*
 ***
 * [研究领域]({{=$DOC.root}}index.html)
 * [项目]({{=$DOC.root}}index.html)
-* [团队]({{=$DOC.root}}index.html)
+* [团队](info/team.html)
 * [帮助]({{=$DOC.root}}index.html)
  * [Documents]({{=$DOC.root}}index.html)
   * [CML (Component Markdown Language)]({{=$DOC.root}}docs/CML.html)
