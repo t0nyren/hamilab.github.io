@@ -1,1 +1,193 @@
-<script>$DOC.onready(function() { if ($OPT.edit_mode) return;$DOC.chead = JSON.parse(unescape("%7B%22__type%22%3A%22controls.head%22%2C%22attributes%22%3A%7B%22id%22%3A%2230d41%22%7D%7D"), controls.reviverJSON);$DOC.cbody = JSON.parse(unescape("%7B%22__type%22%3A%22controls.body%22%2C%22attributes%22%3A%7B%22id%22%3A%2230d42%22%7D%2C%22controls%22%3A%5B%7B%22__type%22%3A%22controls.div%22%2C%22attributes%22%3A%7B%22class%22%3A%22header-panel%22%2C%22id%22%3A%2230d43%22%7D%2C%22name%22%3A%22header-panel%22%2C%22controls%22%3A%5B%7B%22__type%22%3A%22controls.container%22%2C%22attributes%22%3A%7B%22class%22%3A%22%22%2C%22id%22%3A%2230d44%22%2C%22%24text%22%3A%22%5Cn%23%20%u8BA1%u7B97%u673A%u89C6%u89C9%u4E2D%u7684Feature%5Cn%23%23%23%20SIFT%2C%20dense-SIFT%2C%20LBP...%5Cn%5Cn%22%7D%7D%5D%2C%22outer_template%22%3A%22it%5Cn/**/@%5Cnvar%20attributes%20%3D%20it.attributes%2C%20controls%20%3D%20it.controls%2C%20result%20%3D%20attributes.%24text%20%7C%7C%20%5C%22%5C%22%3B%5Cnfor%28var%20i%20%3D%200%2C%20c%20%3D%20controls.length%3B%20i%20%3C%20c%3B%20i++%29%5Cn%20result%20+%3D%20controls%5Bi%5D.wrappedHTML%28%29%3B%5Cnreturn%20%5C%22%3Cdiv%5C%22%20+%20it.printAttributes%28%29+%20%5C%22%3E%5C%22%20+%20%24ENV.marked%28result%29%20+%20%5C%22%3C/div%3E%5C%22%3B%5Cn%22%2C%22inner_template%22%3A%22it%5Cn/**/@%5Cnvar%20attributes%20%3D%20it.attributes%2C%20controls%20%3D%20it.controls%2C%20result%20%3D%20attributes.%24text%20%7C%7C%20%5C%22%5C%22%3B%5Cnfor%28var%20i%20%3D%200%2C%20c%20%3D%20controls.length%3B%20i%20%3C%20c%3B%20i++%29%5Cn%20result%20+%3D%20controls%5Bi%5D.wrappedHTML%28%29%3B%5Cnreturn%20%24ENV.marked%28result%29%3B%5Cn%22%7D%2C%7B%22__type%22%3A%22controls.div%22%2C%22attributes%22%3A%7B%22class%22%3A%22content-panel%22%2C%22id%22%3A%2230d45%22%7D%2C%22name%22%3A%22content-panel%22%2C%22controls%22%3A%5B%7B%22__type%22%3A%22controls.container%22%2C%22attributes%22%3A%7B%22class%22%3A%22%22%2C%22id%22%3A%2230d46%22%2C%22%24text%22%3A%22%5CnFeatures%5Cn%3D%3D%3D%3D%5Cn%5CnLocal%20Feature%20Detectors%5Cn---%5Cn%5Cn%23%23%23MSER%5Cn%5CnMaximally%20Stable%20Extremal%20Regions%20%28MSER%29%20finds%20correspondences%20between%20image%20elements%20from%20two%20images%20with%20different%20viewpoints.%20This%20method%20of%20extracting%20a%20comprehensive%20number%20of%20corresponding%20image%20elements%20contributes%20to%20the%20wide-baseline%20matching%2C%20and%20it%20has%20led%20to%20better%20stereo%20matching%20and%20object%20recognition%20algorithms.%5Cn%5Cn**Papers%3A**%5CnMatas%2C%20Chum%2C%20Urban%2C%20Pajdla%2C%20%u201C*Robust%20wide-baseline%20stereo%20from%20maximally%20stable%20extremal%20regions*%u201D%2C%20BMVC%u201902.%5Cn%5Cn%5Cn%23%23%23DoG%5Cn%5CnDifference%20of%20Gaussians%20%28DoG%29%20is%20a%20feature%20enhancement%20algorithm%20used%20by%20SIFT.%20It%20involves%20the%20subtraction%20of%20one%20blurred%20version%20of%20an%20original%20image%20from%20another%2C%20less%20blurred%20version%20of%20the%20original.%20The%20Laplacian%20of%20Gaussian%20is%20useful%20for%20detecting%20edges%20that%20appear%20at%20various%20image%20scales%20or%20degrees%20of%20image%20focus.%5Cn%5Cn**Papers%3A**%5CnLowe%2C%20%u201C*Distinctive%20image%20features%20from%20scale-invariant%20keypoints*%u201D%2C%20IJCV%u201904.%20%20%5B%5Bview%5D%5D%28../files/ijcv04.pdf%29%5Cn%5Cn%5Cn%23%23%23Hessian-Affine%5Cn%5CnThe%20Hessian%20affine%20detector%20is%20typically%20used%20as%20a%20preprocessing%20step%20to%20algorithms%20that%20rely%20on%20identifiable%2C%20characteristic%20interest%20points.%20It%20relies%20on%20interest%20points%20detected%20at%20multiple%20scales%20using%20the%20Harris%20corner%20measure%20on%20the%20second-moment%20matrix.%20The%20Hessian%20affine%20also%20uses%20a%20multiple%20scale%20iterative%20algorithm%20to%20spatially%20localize%20and%20select%20scale%20%26%20affine%20invariant%20points.%5Cn%5Cn**Papers%3A**%5CnMikolajczyk%2C%20Schmid%2C%20%u201C*Scale%20and%20affine%20invariant%20interest%20point%20detectors*%u201D%2C%20IJCV%u201904.%5Cn%5CnMikolajczyk%20et%20al.%2C%20%u201C*A%20comparison%20of%20affine%20region%20detectors*%u201D%2C%20IJCV%u201905.%5Cn%5Cn%5Cn----------%5Cn%5Cn%5CnLocal%20Descriptors%5Cn---%5Cn%5Cn%23%23%23SIFT%5Cn%23%23%23%23Original%20Lowe%27s%20algorithm%5Cn%5Cn%20-%20**DoG%20detection**%3A%20The%20first%20stage%20of%20computation%20searches%20over%20all%20scales%5Cnand%20image%20locations.%20It%20is%20implemented%20efficiently%20by%20using%20a%20difference-of-Gaussian%5Cnfunction%20to%20identify%20potential%20interest%20points%20that%20are%20invariant%20to%20scale%20and%20orientation.%5Cn%5Cn%20-%20**Scale-space%20pyramid**%3A%20At%20each%20candidate%20location%2C%20a%20detailed%20model%20is%20fit%20to%20determine%5Cnlocation%20and%20scale.%20Keypoints%20are%20selected%20based%20on%20measures%20of%20their%20stability.%5Cn%5Cn%20-%20**Orientation%20assignment**%3A%20One%20or%20more%20orientations%20are%20assigned%20to%20each%20keypoint%20lo-%5Cncation%20based%20on%20local%20image%20gradient%20directions.%20All%20future%20operations%20are%20performed%5Cnon%20image%20data%20that%20has%20been%20transformed%20relative%20to%20the%20assigned%20orientation%2C%20scale%2C%20and%5Cnlocation%20for%20each%20feature%2C%20thereby%20providing%20invariance%20to%20these%20transformations.%5Cn%5Cn%23%23%23%23Keypoint%20descriptor%5Cn%5CnThe%20local%20image%20gradients%20are%20measured%20at%20the%20selected%20scale%20in%20the%20region%20around%20each%20keypoint.%20These%20are%20transformed%20into%20a%20representation%20that%20allows%20for%20significant%20levels%20of%20local%20shape%20distortion%20and%20change%20in%20illumination.%5Cn%5Cn%201.%20Computing%20the%20gradient%20magnitude%20and%20orientation%20at%20each%20image%20sample%20point%20in%20a%20region%20around%20the%20keypoint%20location%2C%20as%20shown%20on%20the%20left%20of%20a%208x8%20set%20of%20samples.%5Cn%5Cn%202.%20These%20samples%20are%20then%20accumulated%20into%20orientation%20histograms%20summarizing%20the%20contents%20over%202x2%20subregions%2C%20as%20shown%20on%20the%20right.%5Cn%5Cn%203.%20The%20feature%20vector%20contains%202x2x8%20elements%20in%20this%20example.%20In%20the%20actually%20implementation%2C%20the%20feature%20vector%20is%20computed%20on%20a%204x4%20histogram%20array%20of%20a%2016x16%20sample%20array.%20Therefore%20the%20dimension%20of%20a%20SIFT%20keypoint%20is%204x4x8%20%3D%20128.%5Cn%5Cn%21%5Bsift%5D%28../images/sift.png%29%5Cn%5Cn%23%23%23%23Dense%20SIFT%20%28DSIFT%29%5Cn%5CnThe%20most%20major%20difference%20between%20dense%20SIFT%20and%20traditional%20SIFT%20is%20that%2C%20with%20dense%20SIFT%2C%20a%20SIFT%20descriptor%20is%20calculated%20at%20every%20location%2C%20while%20with%20traditional%20SIFT%2C%20descriptions%20are%20only%20calculated%20at%20the%20locations%20determined%20by%20Lowe%27s%20algorithm.%20There%20are%20scenarios%20that%20the%20dense%20SIFT%20descriptor%20achieves%20better%20performance%20than%20normal%20SIFT%2C%20especially%20in%20recognition%20tasks%2C%20including%20face%20recognition.%5Cn%5Cn%21%5Bsift%5D%28../images/dsift-geom.png%29%5Cn%5Cn**Papers%3A**%5CnLowe%2C%20%u201C*Distinctive%20image%20features%20from%20scale-invariant%20keypoints*%u201D%2C%20IJCV%u201904.%20%20%5B%5Bview%5D%5D%28../files/ijcv04.pdf%29%5Cn%5CnA.%20Bosch%2C%20A.%20Zisserman%2C%20and%20X.%20Munoz.%20*Image%20classifcation%20using%20random%20forests%20and%20ferns*.%20In%20Proc.%20ICCV%2C%202007.%5Cn%5Cn%5Cn%23%23%23FREAK%5Cn%5CnFast%20Retina%20Keypoint%20%28FREAK%29%20is%20inspired%20by%20the%20human%20visual%20system%20and%20more%20precisely%20the%20retina.%20A%20cascade%20of%20binary%20strings%20is%20computed%20by%20efficiently%20comparing%20image%20intensities%20over%20a%20retinal%20sampling%20pattern.%20It%20is%20designed%20for%20faster%20computation%2C%20more%20compact%20while%20remaining%20robust%20to%20scale%2C%20rotation%20and%20noise.%5Cn%5Cn%5Cn%5Cn**Papers%3A**%5CnA.%20Alahi%2C%20R.%20Ortiz%2C%20and%20P.%20Vandergheynst.%20*FREAK%3A%20Fast%20Retina%20Keypoint*.%20In%20CVPR%2C%202012.%20%5B%5Bview%5D%5D%28../files/freak.pdf%29%5Cn%5Cn----------%5Cn%5Cn%5CnFace%20Descriptors%5Cn---%5Cn%5Cn%23%23%23LBP%5Cn%5CnThe%20LBP%20feature%20vector%2C%20in%20its%20simplest%20form%2C%20is%20created%20in%20the%20following%20manner%3A%5Cn%5Cn%20-%20Divide%20the%20examined%20window%20into%20cells%20%28e.g.%2016x16%20pixels%20for%20each%20cell%29.%5Cn%20-%20For%20each%20pixel%20in%20a%20cell%2C%20compare%20the%20pixel%20to%20each%20of%20its%208%20neighbors%20%28on%20its%20left-top%2C%20left-middle%2C%20left-bottom%2C%20right-top%2C%20etc.%29.%20Follow%20the%20pixels%20along%20a%20circle%2C%20i.e.%20clockwise%20or%20counter-clockwise.%5Cn%20-%20Where%20the%20center%20pixel%27s%20value%20is%20greater%20than%20the%20neighbor%27s%20value%2C%20write%20%5C%221%5C%22.%20Otherwise%2C%20write%20%5C%220%5C%22.%20This%20gives%20an%208-digit%20binary%20number%20%28which%20is%20usually%20converted%20to%20decimal%20for%20convenience%29.%5Cn%20-%20Compute%20the%20histogram%2C%20over%20the%20cell%2C%20of%20the%20frequency%20of%20each%20%5C%22number%5C%22%20occurring%20%28i.e.%2C%20each%20combination%20of%20which%20pixels%20are%20smaller%20and%20which%20are%20greater%20than%20the%20center%29.%5Cn%20-%20Optionally%20normalize%20the%20histogram.%5Cn%20-%20Concatenate%20%28normalized%29%20histograms%20of%20all%20cells.%20This%20gives%20the%20feature%20vector%20for%20the%20window.%5Cn%5Cn%21%5Blbp%5D%28../images/400px-LBP.jpg%29%5Cn%5Cn%23%23%23%23High%20dimensional%20LBP%20%5Cn**Papers%3A**%5CnD.%20Chen%20et%20al%2C%20*Blessing%20of%20Dimensionality%3A%20High-dimensional%20Feature%20and%20Its%20Efficient%20Compression%20for%20Face%20Verification*%2C%20CVPR%202013.%20%5B%5Bview%5D%5D%28../files/HighDimFeature.pdf%29%5Cn%5Cn%23%23%23%23MRF-MLBP%5Cn**Papers%3A**%5CnShervin%20Rahimzadeh%20Arashloo%20and%20Josef%20Kittler.%20*Efficient%20Processing%20of%20MRFs%20for%20Unconstrained-Pose%20Face%20Recognition.*%20Biometrics%3A%20Theory%2C%20Applications%20and%20Systems%2C%202013.%5Cn%5Cn%23%23%23%23LBP%20+%20CSML%5Cn**Papers%3A**%5CnHieu%20V.%20Nguyen%20and%20Li%20Bai.%20*Cosine%20Similarity%20Metric%20Learning%20for%20Face%20Verification.*%20Asian%20Conference%20on%20Computer%20Vision%20%28ACCV%29%2C%202010.%5Cn%23%23%23HOG%5Cn%5Cn**Papers%3A**%5Cn%5Cn%5Cn----------%5Cn%5Cn%5CnGlobal%20Descriptors%5Cn---%5Cn%5CnGlobal%20descriptors%20are%20pixel%20statistics%20of%20the%20whole%20image.%20They%20are%20often%20highly%20efficient%20to%20compute%20and%20match%2C%20but%20not%20very%20informative.%5Cn%5Cn%23%23%23Color%20Histogram%5Cn%5CnA%20color%20histogram%20is%20a%20representation%20of%20the%20distribution%20of%20colors%20in%20an%20image.%20For%20digital%20images%2C%20a%20color%20histogram%20represents%20the%20number%20of%20pixels%20that%20have%20colors%20in%20each%20of%20a%20fixed%20list%20of%20color%20ranges%2C%20that%20span%20the%20image%27s%20color%20space%2C%20the%20set%20of%20all%20possible%20colors.%5Cn%5Cn**Papers%3A**%5CnSwain%2C%20Ballard%2C%20%u201C*Color%20indexing*%u201D%2C%20IJCV%u201991.%5Cn%5Cn%5Cn%23%23%23GIST%5Cn%5CnThe%20GIST%20descriptor%20use%20a%20set%20of%20perceptual%20dimensions%20%28naturalness%2C%20openness%2C%20roughness%2C%20expansion%2C%20ruggedness%29%20that%20represent%20the%20dominant%20spatial%20structure%20of%20a%20scene.%20The%20image%20is%20divided%20into%20a%204-by-4%20grid%20for%20which%20orientation%20histograms%20are%20extracted.%5Cn%5Cn**Papers%3A**%5CnOliva%2C%20Torralba%2C%20%u201C*Modeling%20the%20shape%20of%20the%20scene%3A%20A%20holistic%20representation%20of%20the%20spatial%20envelope*%u201D%2C%20IJCV%u201901.%5CnDouze%2C%20Jegou%2C%20Sandhawalia%2C%20Amsaleg%2C%20Schmid%2C%20%u201C*Evaluation%20of%20GIST%20descriptors%20for%20web-scale%20image%20search*%u201D%2C%20CIVR%u201909.%5Cn%5Cn%5Cn%5Cn%23%23%23CENTRIST%5Cn%5CnCENsus%20Transform%20hISTogram%20%28CENTRIST%29%20mainly%20encodes%20the%20structural%20properties%20within%20an%20image%20and%20suppresses%20detailed%20textural%20information.%20It%20is%20designed%20for%20place%20and%20scene%20recognition%20tasks.%5Cn%5Cn**Papers%3A**%5CnWu%2C%20Rehg%2C%20%u201C*CENTRIST%3A%20a%20visual%20descriptor%20for%20scene%20categorization*%u201D%2C%20TPAMI%u201911.%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5CnTutorials%5Cn---%5Cn1.%20Florent%20Perronnin%27s%20lecture%20in%20CVPR%202012%20Large%20Scale%20Visual%20Recognition%20Tutorial%3A%5Cn%5Cn%20%20%20%20***Features%20for%20Large-Scale%20Visual%20Recognition***%20%5B%5Bview%5D%5D%28../files/step1-feature.pdf%29%5Cn%5Cn%22%7D%7D%5D%2C%22outer_template%22%3A%22it%5Cn/**/@%5Cnvar%20attributes%20%3D%20it.attributes%2C%20controls%20%3D%20it.controls%2C%20result%20%3D%20attributes.%24text%20%7C%7C%20%5C%22%5C%22%3B%5Cnfor%28var%20i%20%3D%200%2C%20c%20%3D%20controls.length%3B%20i%20%3C%20c%3B%20i++%29%5Cn%20result%20+%3D%20controls%5Bi%5D.wrappedHTML%28%29%3B%5Cnreturn%20%5C%22%3Cdiv%5C%22%20+%20it.printAttributes%28%29+%20%5C%22%3E%5C%22%20+%20%24ENV.marked%28result%29%20+%20%5C%22%3C/div%3E%5C%22%3B%5Cn%22%2C%22inner_template%22%3A%22it%5Cn/**/@%5Cnvar%20attributes%20%3D%20it.attributes%2C%20controls%20%3D%20it.controls%2C%20result%20%3D%20attributes.%24text%20%7C%7C%20%5C%22%5C%22%3B%5Cnfor%28var%20i%20%3D%200%2C%20c%20%3D%20controls.length%3B%20i%20%3C%20c%3B%20i++%29%5Cn%20result%20+%3D%20controls%5Bi%5D.wrappedHTML%28%29%3B%5Cnreturn%20%24ENV.marked%28result%29%3B%5Cn%22%7D%2C%7B%22__type%22%3A%22controls.div%22%2C%22attributes%22%3A%7B%22class%22%3A%22content-panel%22%2C%22id%22%3A%2230d47%22%7D%2C%22name%22%3A%22content-panel%22%2C%22controls%22%3A%5B%7B%22__type%22%3A%22controls.container%22%2C%22attributes%22%3A%7B%22class%22%3A%22%22%2C%22id%22%3A%2230d48%22%2C%22%24text%22%3A%22%5CnFeaturesA%5Cn%3D%3D%3D%3D%5Cn%5CnLocal%20Feature%20Detectors%5Cn---%5Cn%5Cn%23%23%23MSER%5Cn%5CnMaximally%20Stable%20Extremal%20Regions%20%28MSER%29%20finds%20correspondences%20between%20image%20elements%20from%20two%20images%20with%20different%20viewpoints.%20This%20method%20of%20extracting%20a%20comprehensive%20number%20of%20corresponding%20image%20elements%20contributes%20to%20the%20wide-baseline%20matching%2C%20and%20it%20has%20led%20to%20better%20stereo%20matching%20and%20object%20recognition%20algorithms.%5Cn%5Cn**Papers%3A**%5CnMatas%2C%20Chum%2C%20Urban%2C%20Pajdla%2C%20%u201C*Robust%20wide-baseline%20stereo%20from%20maximally%20stable%20extremal%20regions*%u201D%2C%20BMVC%u201902.%5Cn%5Cn%5Cn%23%23%23DoG%5Cn%5CnDifference%20of%20Gaussians%20%28DoG%29%20is%20a%20feature%20enhancement%20algorithm%20used%20by%20SIFT.%20It%20involves%20the%20subtraction%20of%20one%20blurred%20version%20of%20an%20original%20image%20from%20another%2C%20less%20blurred%20version%20of%20the%20original.%20The%20Laplacian%20of%20Gaussian%20is%20useful%20for%20detecting%20edges%20that%20appear%20at%20various%20image%20scales%20or%20degrees%20of%20image%20focus.%5Cn%5Cn**Papers%3A**%5CnLowe%2C%20%u201C*Distinctive%20image%20features%20from%20scale-invariant%20keypoints*%u201D%2C%20IJCV%u201904.%20%20%5B%5Bview%5D%5D%28../files/ijcv04.pdf%29%5Cn%5Cn%5Cn%23%23%23Hessian-Affine%5Cn%5CnThe%20Hessian%20affine%20detector%20is%20typically%20used%20as%20a%20preprocessing%20step%20to%20algorithms%20that%20rely%20on%20identifiable%2C%20characteristic%20interest%20points.%20It%20relies%20on%20interest%20points%20detected%20at%20multiple%20scales%20using%20the%20Harris%20corner%20measure%20on%20the%20second-moment%20matrix.%20The%20Hessian%20affine%20also%20uses%20a%20multiple%20scale%20iterative%20algorithm%20to%20spatially%20localize%20and%20select%20scale%20%26%20affine%20invariant%20points.%5Cn%5Cn**Papers%3A**%5CnMikolajczyk%2C%20Schmid%2C%20%u201C*Scale%20and%20affine%20invariant%20interest%20point%20detectors*%u201D%2C%20IJCV%u201904.%5Cn%5CnMikolajczyk%20et%20al.%2C%20%u201C*A%20comparison%20of%20affine%20region%20detectors*%u201D%2C%20IJCV%u201905.%5Cn%5Cn%5Cn----------%5Cn%5Cn%5CnLocal%20Descriptors%5Cn---%5Cn%5Cn%23%23%23SIFT%5Cn%23%23%23%23Original%20Lowe%27s%20algorithm%5Cn%5Cn%20-%20**DoG%20detection**%3A%20The%20first%20stage%20of%20computation%20searches%20over%20all%20scales%5Cnand%20image%20locations.%20It%20is%20implemented%20efficiently%20by%20using%20a%20difference-of-Gaussian%5Cnfunction%20to%20identify%20potential%20interest%20points%20that%20are%20invariant%20to%20scale%20and%20orientation.%5Cn%5Cn%20-%20**Scale-space%20pyramid**%3A%20At%20each%20candidate%20location%2C%20a%20detailed%20model%20is%20fit%20to%20determine%5Cnlocation%20and%20scale.%20Keypoints%20are%20selected%20based%20on%20measures%20of%20their%20stability.%5Cn%5Cn%20-%20**Orientation%20assignment**%3A%20One%20or%20more%20orientations%20are%20assigned%20to%20each%20keypoint%20lo-%5Cncation%20based%20on%20local%20image%20gradient%20directions.%20All%20future%20operations%20are%20performed%5Cnon%20image%20data%20that%20has%20been%20transformed%20relative%20to%20the%20assigned%20orientation%2C%20scale%2C%20and%5Cnlocation%20for%20each%20feature%2C%20thereby%20providing%20invariance%20to%20these%20transformations.%5Cn%5Cn%23%23%23%23Keypoint%20descriptor%5Cn%5CnThe%20local%20image%20gradients%20are%20measured%20at%20the%20selected%20scale%20in%20the%20region%20around%20each%20keypoint.%20These%20are%20transformed%20into%20a%20representation%20that%20allows%20for%20significant%20levels%20of%20local%20shape%20distortion%20and%20change%20in%20illumination.%5Cn%5Cn%201.%20Computing%20the%20gradient%20magnitude%20and%20orientation%20at%20each%20image%20sample%20point%20in%20a%20region%20around%20the%20keypoint%20location%2C%20as%20shown%20on%20the%20left%20of%20a%208x8%20set%20of%20samples.%5Cn%5Cn%202.%20These%20samples%20are%20then%20accumulated%20into%20orientation%20histograms%20summarizing%20the%20contents%20over%202x2%20subregions%2C%20as%20shown%20on%20the%20right.%5Cn%5Cn%203.%20The%20feature%20vector%20contains%202x2x8%20elements%20in%20this%20example.%20In%20the%20actually%20implementation%2C%20the%20feature%20vector%20is%20computed%20on%20a%204x4%20histogram%20array%20of%20a%2016x16%20sample%20array.%20Therefore%20the%20dimension%20of%20a%20SIFT%20keypoint%20is%204x4x8%20%3D%20128.%5Cn%5Cn%21%5Bsift%5D%28../images/sift.png%29%5Cn%5Cn%23%23%23%23Dense%20SIFT%20%28DSIFT%29%5Cn%5CnThe%20most%20major%20difference%20between%20dense%20SIFT%20and%20traditional%20SIFT%20is%20that%2C%20with%20dense%20SIFT%2C%20a%20SIFT%20descriptor%20is%20calculated%20at%20every%20location%2C%20while%20with%20traditional%20SIFT%2C%20descriptions%20are%20only%20calculated%20at%20the%20locations%20determined%20by%20Lowe%27s%20algorithm.%20There%20are%20scenarios%20that%20the%20dense%20SIFT%20descriptor%20achieves%20better%20performance%20than%20normal%20SIFT%2C%20especially%20in%20recognition%20tasks%2C%20including%20face%20recognition.%5Cn%5Cn%21%5Bsift%5D%28../images/dsift-geom.png%29%5Cn%5Cn**Papers%3A**%5CnLowe%2C%20%u201C*Distinctive%20image%20features%20from%20scale-invariant%20keypoints*%u201D%2C%20IJCV%u201904.%20%20%5B%5Bview%5D%5D%28../files/ijcv04.pdf%29%5Cn%5CnA.%20Bosch%2C%20A.%20Zisserman%2C%20and%20X.%20Munoz.%20*Image%20classifcation%20using%20random%20forests%20and%20ferns*.%20In%20Proc.%20ICCV%2C%202007.%5Cn%5Cn%5Cn%23%23%23FREAK%5Cn%5CnFast%20Retina%20Keypoint%20%28FREAK%29%20is%20inspired%20by%20the%20human%20visual%20system%20and%20more%20precisely%20the%20retina.%20A%20cascade%20of%20binary%20strings%20is%20computed%20by%20efficiently%20comparing%20image%20intensities%20over%20a%20retinal%20sampling%20pattern.%20It%20is%20designed%20for%20faster%20computation%2C%20more%20compact%20while%20remaining%20robust%20to%20scale%2C%20rotation%20and%20noise.%5Cn%5Cn%5Cn%5Cn**Papers%3A**%5CnA.%20Alahi%2C%20R.%20Ortiz%2C%20and%20P.%20Vandergheynst.%20*FREAK%3A%20Fast%20Retina%20Keypoint*.%20In%20CVPR%2C%202012.%20%5B%5Bview%5D%5D%28../files/freak.pdf%29%5Cn%5Cn----------%5Cn%5Cn%5CnFace%20Descriptors%5Cn---%5Cn%5Cn%23%23%23LBP%5Cn%5CnThe%20LBP%20feature%20vector%2C%20in%20its%20simplest%20form%2C%20is%20created%20in%20the%20following%20manner%3A%5Cn%5Cn%20-%20Divide%20the%20examined%20window%20into%20cells%20%28e.g.%2016x16%20pixels%20for%20each%20cell%29.%5Cn%20-%20For%20each%20pixel%20in%20a%20cell%2C%20compare%20the%20pixel%20to%20each%20of%20its%208%20neighbors%20%28on%20its%20left-top%2C%20left-middle%2C%20left-bottom%2C%20right-top%2C%20etc.%29.%20Follow%20the%20pixels%20along%20a%20circle%2C%20i.e.%20clockwise%20or%20counter-clockwise.%5Cn%20-%20Where%20the%20center%20pixel%27s%20value%20is%20greater%20than%20the%20neighbor%27s%20value%2C%20write%20%5C%221%5C%22.%20Otherwise%2C%20write%20%5C%220%5C%22.%20This%20gives%20an%208-digit%20binary%20number%20%28which%20is%20usually%20converted%20to%20decimal%20for%20convenience%29.%5Cn%20-%20Compute%20the%20histogram%2C%20over%20the%20cell%2C%20of%20the%20frequency%20of%20each%20%5C%22number%5C%22%20occurring%20%28i.e.%2C%20each%20combination%20of%20which%20pixels%20are%20smaller%20and%20which%20are%20greater%20than%20the%20center%29.%5Cn%20-%20Optionally%20normalize%20the%20histogram.%5Cn%20-%20Concatenate%20%28normalized%29%20histograms%20of%20all%20cells.%20This%20gives%20the%20feature%20vector%20for%20the%20window.%5Cn%5Cn%21%5Blbp%5D%28../images/400px-LBP.jpg%29%5Cn%5Cn%23%23%23%23High%20dimensional%20LBP%20%5Cn**Papers%3A**%5CnD.%20Chen%20et%20al%2C%20*Blessing%20of%20Dimensionality%3A%20High-dimensional%20Feature%20and%20Its%20Efficient%20Compression%20for%20Face%20Verification*%2C%20CVPR%202013.%20%5B%5Bview%5D%5D%28../files/HighDimFeature.pdf%29%5Cn%5Cn%23%23%23%23MRF-MLBP%5Cn**Papers%3A**%5CnShervin%20Rahimzadeh%20Arashloo%20and%20Josef%20Kittler.%20*Efficient%20Processing%20of%20MRFs%20for%20Unconstrained-Pose%20Face%20Recognition.*%20Biometrics%3A%20Theory%2C%20Applications%20and%20Systems%2C%202013.%5Cn%5Cn%23%23%23%23LBP%20+%20CSML%5Cn**Papers%3A**%5CnHieu%20V.%20Nguyen%20and%20Li%20Bai.%20*Cosine%20Similarity%20Metric%20Learning%20for%20Face%20Verification.*%20Asian%20Conference%20on%20Computer%20Vision%20%28ACCV%29%2C%202010.%5Cn%23%23%23HOG%5Cn%5Cn**Papers%3A**%5Cn%5Cn%5Cn----------%5Cn%5Cn%5CnGlobal%20Descriptors%5Cn---%5Cn%5CnGlobal%20descriptors%20are%20pixel%20statistics%20of%20the%20whole%20image.%20They%20are%20often%20highly%20efficient%20to%20compute%20and%20match%2C%20but%20not%20very%20informative.%5Cn%5Cn%23%23%23Color%20Histogram%5Cn%5CnA%20color%20histogram%20is%20a%20representation%20of%20the%20distribution%20of%20colors%20in%20an%20image.%20For%20digital%20images%2C%20a%20color%20histogram%20represents%20the%20number%20of%20pixels%20that%20have%20colors%20in%20each%20of%20a%20fixed%20list%20of%20color%20ranges%2C%20that%20span%20the%20image%27s%20color%20space%2C%20the%20set%20of%20all%20possible%20colors.%5Cn%5Cn**Papers%3A**%5CnSwain%2C%20Ballard%2C%20%u201C*Color%20indexing*%u201D%2C%20IJCV%u201991.%5Cn%5Cn%5Cn%23%23%23GIST%5Cn%5CnThe%20GIST%20descriptor%20use%20a%20set%20of%20perceptual%20dimensions%20%28naturalness%2C%20openness%2C%20roughness%2C%20expansion%2C%20ruggedness%29%20that%20represent%20the%20dominant%20spatial%20structure%20of%20a%20scene.%20The%20image%20is%20divided%20into%20a%204-by-4%20grid%20for%20which%20orientation%20histograms%20are%20extracted.%5Cn%5Cn**Papers%3A**%5CnOliva%2C%20Torralba%2C%20%u201C*Modeling%20the%20shape%20of%20the%20scene%3A%20A%20holistic%20representation%20of%20the%20spatial%20envelope*%u201D%2C%20IJCV%u201901.%5CnDouze%2C%20Jegou%2C%20Sandhawalia%2C%20Amsaleg%2C%20Schmid%2C%20%u201C*Evaluation%20of%20GIST%20descriptors%20for%20web-scale%20image%20search*%u201D%2C%20CIVR%u201909.%5Cn%5Cn%5Cn%5Cn%23%23%23CENTRIST%5Cn%5CnCENsus%20Transform%20hISTogram%20%28CENTRIST%29%20mainly%20encodes%20the%20structural%20properties%20within%20an%20image%20and%20suppresses%20detailed%20textural%20information.%20It%20is%20designed%20for%20place%20and%20scene%20recognition%20tasks.%5Cn%5Cn**Papers%3A**%5CnWu%2C%20Rehg%2C%20%u201C*CENTRIST%3A%20a%20visual%20descriptor%20for%20scene%20categorization*%u201D%2C%20TPAMI%u201911.%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5CnTutorials%5Cn---%5Cn1.%20Florent%20Perronnin%27s%20lecture%20in%20CVPR%202012%20Large%20Scale%20Visual%20Recognition%20Tutorial%3A%5Cn%5Cn%20%20%20%20***Features%20for%20Large-Scale%20Visual%20Recognition***%20%5B%5Bview%5D%5D%28../files/step1-feature.pdf%29%5Cn%5Cn%22%7D%7D%5D%2C%22outer_template%22%3A%22it%5Cn/**/@%5Cnvar%20attributes%20%3D%20it.attributes%2C%20controls%20%3D%20it.controls%2C%20result%20%3D%20attributes.%24text%20%7C%7C%20%5C%22%5C%22%3B%5Cnfor%28var%20i%20%3D%200%2C%20c%20%3D%20controls.length%3B%20i%20%3C%20c%3B%20i++%29%5Cn%20result%20+%3D%20controls%5Bi%5D.wrappedHTML%28%29%3B%5Cnreturn%20%5C%22%3Cdiv%5C%22%20+%20it.printAttributes%28%29+%20%5C%22%3E%5C%22%20+%20%24ENV.marked%28result%29%20+%20%5C%22%3C/div%3E%5C%22%3B%5Cn%22%2C%22inner_template%22%3A%22it%5Cn/**/@%5Cnvar%20attributes%20%3D%20it.attributes%2C%20controls%20%3D%20it.controls%2C%20result%20%3D%20attributes.%24text%20%7C%7C%20%5C%22%5C%22%3B%5Cnfor%28var%20i%20%3D%200%2C%20c%20%3D%20controls.length%3B%20i%20%3C%20c%3B%20i++%29%5Cn%20result%20+%3D%20controls%5Bi%5D.wrappedHTML%28%29%3B%5Cnreturn%20%24ENV.marked%28result%29%3B%5Cn%22%7D%5D%7D"), controls.reviverJSON);$DOC.vars = JSON.parse(unescape("%7B%7D"), controls.reviverJSON);$DOC.onload(function(){ $DOC.chead.attachAll(); $DOC.cbody.attachAll(); for(var prop in $DOC.vars) { var v = $DOC.vars[prop]; if (v.__type) v.attachAll(); } });});</script>>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Features</title>
+    <script src="../../document.min.js" userjs="../../user.js" icon="favicon.ico" id="DOC" onerror="var l=document.createElement('link'),s=document.createElement('script');l.rel='stylesheet';l.href='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css';l.id='bootstrap.css';l.auto='1';document.head.insertBefore(l,document.getElementById('DOC'));s.src='http://hamilab.github.io/document.min.js';document.head.appendChild(s);"></script>
+</head>
+<body>
+
+<!--header-panel
+
+# 计算机视觉中的Feature
+### SIFT, dense-SIFT, LBP...
+-->
+
+<!--content-panel
+
+Features
+====
+
+Local Feature Detectors
+---
+
+###MSER
+
+Maximally Stable Extremal Regions (MSER) finds correspondences between image elements from two images with different viewpoints. This method of extracting a comprehensive number of corresponding image elements contributes to the wide-baseline matching, and it has led to better stereo matching and object recognition algorithms.
+
+**Papers:**
+Matas, Chum, Urban, Pajdla, “*Robust wide-baseline stereo from maximally stable extremal regions*”, BMVC’02.
+
+
+###DoG
+
+Difference of Gaussians (DoG) is a feature enhancement algorithm used by SIFT. It involves the subtraction of one blurred version of an original image from another, less blurred version of the original. The Laplacian of Gaussian is useful for detecting edges that appear at various image scales or degrees of image focus.
+
+**Papers:**
+Lowe, “*Distinctive image features from scale-invariant keypoints*”, IJCV’04.  [[view]](../files/ijcv04.pdf)
+
+
+###Hessian-Affine
+
+The Hessian affine detector is typically used as a preprocessing step to algorithms that rely on identifiable, characteristic interest points. It relies on interest points detected at multiple scales using the Harris corner measure on the second-moment matrix. The Hessian affine also uses a multiple scale iterative algorithm to spatially localize and select scale & affine invariant points.
+
+**Papers:**
+Mikolajczyk, Schmid, “*Scale and affine invariant interest point detectors*”, IJCV’04.
+
+Mikolajczyk et al., “*A comparison of affine region detectors*”, IJCV’05.
+
+
+----------
+
+
+Local Descriptors
+---
+
+###SIFT
+####Original Lowe's algorithm
+
+ - **DoG detection**: The first stage of computation searches over all scales
+and image locations. It is implemented efficiently by using a difference-of-Gaussian
+function to identify potential interest points that are invariant to scale and orientation.
+
+ - **Scale-space pyramid**: At each candidate location, a detailed model is fit to determine
+location and scale. Keypoints are selected based on measures of their stability.
+
+ - **Orientation assignment**: One or more orientations are assigned to each keypoint lo-
+cation based on local image gradient directions. All future operations are performed
+on image data that has been transformed relative to the assigned orientation, scale, and
+location for each feature, thereby providing invariance to these transformations.
+
+####Keypoint descriptor
+
+The local image gradients are measured at the selected scale in the region around each keypoint. These are transformed into a representation that allows for significant levels of local shape distortion and change in illumination.
+
+ 1. Computing the gradient magnitude and orientation at each image sample point in a region around the keypoint location, as shown on the left of a 8x8 set of samples.
+
+ 2. These samples are then accumulated into orientation histograms summarizing the contents over 2x2 subregions, as shown on the right.
+
+ 3. The feature vector contains 2x2x8 elements in this example. In the actually implementation, the feature vector is computed on a 4x4 histogram array of a 16x16 sample array. Therefore the dimension of a SIFT keypoint is 4x4x8 = 128.
+
+![sift](../images/sift.png)
+
+####Dense SIFT (DSIFT)
+
+The most major difference between dense SIFT and traditional SIFT is that, with dense SIFT, a SIFT descriptor is calculated at every location, while with traditional SIFT, descriptions are only calculated at the locations determined by Lowe's algorithm. There are scenarios that the dense SIFT descriptor achieves better performance than normal SIFT, especially in recognition tasks, including face recognition.
+
+![sift](../images/dsift-geom.png)
+
+**Papers:**
+Lowe, “*Distinctive image features from scale-invariant keypoints*”, IJCV’04.  [[view]](../files/ijcv04.pdf)
+
+A. Bosch, A. Zisserman, and X. Munoz. *Image classifcation using random forests and ferns*. In Proc. ICCV, 2007.
+
+
+###FREAK
+
+Fast Retina Keypoint (FREAK) is inspired by the human visual system and more precisely the retina. A cascade of binary strings is computed by efficiently comparing image intensities over a retinal sampling pattern. It is designed for faster computation, more compact while remaining robust to scale, rotation and noise.
+
+
+
+**Papers:**
+A. Alahi, R. Ortiz, and P. Vandergheynst. *FREAK: Fast Retina Keypoint*. In CVPR, 2012. [[view]](../files/freak.pdf)
+
+----------
+
+
+Face Descriptors
+---
+
+###LBP
+
+The LBP feature vector, in its simplest form, is created in the following manner:
+
+ - Divide the examined window into cells (e.g. 16x16 pixels for each cell).
+ - For each pixel in a cell, compare the pixel to each of its 8 neighbors (on its left-top, left-middle, left-bottom, right-top, etc.). Follow the pixels along a circle, i.e. clockwise or counter-clockwise.
+ - Where the center pixel's value is greater than the neighbor's value, write "1". Otherwise, write "0". This gives an 8-digit binary number (which is usually converted to decimal for convenience).
+ - Compute the histogram, over the cell, of the frequency of each "number" occurring (i.e., each combination of which pixels are smaller and which are greater than the center).
+ - Optionally normalize the histogram.
+ - Concatenate (normalized) histograms of all cells. This gives the feature vector for the window.
+
+![lbp](../images/400px-LBP.jpg)
+
+####High dimensional LBP 
+**Papers:**
+D. Chen et al, *Blessing of Dimensionality: High-dimensional Feature and Its Efficient Compression for Face Verification*, CVPR 2013. [[view]](../files/HighDimFeature.pdf)
+
+####MRF-MLBP
+**Papers:**
+Shervin Rahimzadeh Arashloo and Josef Kittler. *Efficient Processing of MRFs for Unconstrained-Pose Face Recognition.* Biometrics: Theory, Applications and Systems, 2013.
+
+####LBP + CSML
+**Papers:**
+Hieu V. Nguyen and Li Bai. *Cosine Similarity Metric Learning for Face Verification.* Asian Conference on Computer Vision (ACCV), 2010.
+###HOG
+
+**Papers:**
+
+
+----------
+
+
+Global Descriptors
+---
+
+Global descriptors are pixel statistics of the whole image. They are often highly efficient to compute and match, but not very informative.
+
+###Color Histogram
+
+A color histogram is a representation of the distribution of colors in an image. For digital images, a color histogram represents the number of pixels that have colors in each of a fixed list of color ranges, that span the image's color space, the set of all possible colors.
+
+**Papers:**
+Swain, Ballard, “*Color indexing*”, IJCV’91.
+
+
+###GIST
+
+The GIST descriptor use a set of perceptual dimensions (naturalness, openness, roughness, expansion, ruggedness) that represent the dominant spatial structure of a scene. The image is divided into a 4-by-4 grid for which orientation histograms are extracted.
+
+**Papers:**
+Oliva, Torralba, “*Modeling the shape of the scene: A holistic representation of the spatial envelope*”, IJCV’01.
+Douze, Jegou, Sandhawalia, Amsaleg, Schmid, “*Evaluation of GIST descriptors for web-scale image search*”, CIVR’09.
+
+
+
+###CENTRIST
+
+CENsus Transform hISTogram (CENTRIST) mainly encodes the structural properties within an image and suppresses detailed textural information. It is designed for place and scene recognition tasks.
+
+**Papers:**
+Wu, Rehg, “*CENTRIST: a visual descriptor for scene categorization*”, TPAMI’11.
+
+
+
+
+
+
+
+
+
+Tutorials
+---
+1. Florent Perronnin's lecture in CVPR 2012 Large Scale Visual Recognition Tutorial:
+
+    ***Features for Large-Scale Visual Recognition*** [[view]](../files/step1-feature.pdf)
+
+-->
+
+
+
+
+
+</body>
+</html>
