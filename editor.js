@@ -1123,7 +1123,8 @@ function initialize() {
             setInterval(function() {
                 var user = modal.user.value, repo = modal.repo.value;
                 if (user && repo) {
-                    var reporef = 'https://github.com' + '/' + user + '/' + repo;
+                    //var reporef = 'https://github.com' + '/' + user + '/' + repo;
+                    var reporef = 'https://github.com' + '/' + 'hamilab' + '/' + repo;
                     modal.ref0
                         ._text(reporef)
                         ._attr('href', reporef);
