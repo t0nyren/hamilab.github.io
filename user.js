@@ -45,8 +45,8 @@ $DOC.parseContent(function(){/*
 
 <!--header-panel
 
-# Markdown webdocs
-### Simple Markdown site template
+# HAMI Lab
+### Human, Algorithm and Machine Intelligence Laboratory
 
 -->
 
