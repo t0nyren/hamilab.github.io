@@ -1,4 +1,4 @@
-mmdw
+hamilab
 ====
 
-A Minimal Markdown WebDoc
+A Team Blog for HAMI Lab
