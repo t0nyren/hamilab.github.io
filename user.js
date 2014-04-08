@@ -8,6 +8,7 @@ $DOC.parseContent(function(){/*
 [QVOD Lab]({{=$DOC.root}}index.html)
 ***
 * [研究领域]({{=$DOC.root}}index.html)
+ * [计算机视觉]({{=$DOC.root}}fields/cv.html)
 * [项目]({{=$DOC.root}}index.html)
 * [团队]({{=$DOC.root}}info/team.html)
 * [帮助]({{=$DOC.root}}index.html)
