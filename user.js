@@ -5,11 +5,16 @@ $DOC.parseContent(function(){/*
 
 <!--fixed-top-bar
 [navbar]
-[QVOD Lab]({{=$DOC.root}}index.html)
+[HAMI Lab]({{=$DOC.root}}index.html)
 ***
 * [研究领域]({{=$DOC.root}}index.html)
  * [计算机视觉]({{=$DOC.root}}fields/cv.html)
 * [项目]({{=$DOC.root}}index.html)
+ * [人脸识别]({{=$DOC.root}}projects/welfare.html)
+ * [人脸跟踪]({{=$DOC.root}}projects/facetrack.html)
+ * [图片搜索]({{=$DOC.root}}projects/imgsearch.html)
+ * [相似视频检测]({{=$DOC.root}}projects/dupvideo.html)
+ * [票房预测]({{=$DOC.root}}projects/boxoffice.html)
 * [团队]({{=$DOC.root}}info/team.html)
 * [帮助]({{=$DOC.root}}index.html)
  * [CML (Component Markdown Language)]({{=$DOC.root}}docs/CML.html)
